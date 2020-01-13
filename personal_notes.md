@@ -27,7 +27,7 @@ if you float, you must clear.
 
 layout problem with floats: equal sized cols so that they wrap nicely
 
-```
+```pug
 [class*="col-"]
   position: relative
 
@@ -40,7 +40,7 @@ layout problem with floats: equal sized cols so that they wrap nicely
 
 Trick with attribute selectors:
 
-```
+```pug
 [href*=".pdf"]::before
   content: ""
 ```
@@ -48,3 +48,20 @@ Trick with attribute selectors:
 you can use the above selector to add an image before each href pdf link?!
 
 TODO: learn about floats, before/after
+
+# floats exercise:
+
+default: content box model (margin/border/padding not calculated in the width: property)
+
+using 
+
+```pug
+html
+  box-sizing: border-box
+
+*, *:before, *:after
+  box-sizing: inherit
+```
+
+`border-box` is NOT an inherited property, so you're saying inherit the box sizing model from `html`
+
